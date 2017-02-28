@@ -1,7 +1,7 @@
 # Product-Key-Grabber
 
 - This handy python script finds product keys for commercial softwares by looking for them on the Internet
-- You need to have a template of how the product key looks like before hand (something like ????-????-????-????)
+- You need to have a template of how the product key looks like before hand (something like ????-????-????-????), that gives an idea how the key looks like
 
 ## Installation & Usage:
 
@@ -23,6 +23,10 @@ For example:
 
 It will keep presenting you with possible product keys
 
+## To Do:
+
+- Make the script for more than one page (duckduckgo restricts more than one page)
+
 ## Disclaimer:
 
-In know way I support piracy. This tool is only meant for educational purposes
+In no way I support piracy. This tool is meant for educational purposes only and I will not be held responsible for any misuse.
