@@ -16,6 +16,9 @@ def reCompiler(template):
 			regex_add += "[A-Z0-9_]"
 		elif letter == '-':
 			regex_add += '-'
+		else:
+			print('Unrecognized character used in key template')
+			exit()
 	return regex_add
 
 query = sys.argv[1]
