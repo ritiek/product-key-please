@@ -30,3 +30,7 @@ It will keep presenting you with possible product keys for the software
 ## Disclaimer:
 
 In no way I support piracy. This tool is meant for educational purposes only and I will not be held responsible for any misuse.
+
+## License:
+
+`The MIT License`
