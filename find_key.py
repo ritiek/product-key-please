@@ -36,9 +36,10 @@ for x in links:
 	page = requests.get(inner_link).text
 	soup = BeautifulSoup(page, 'html.parser')
 	link = (soup.find('script').get_text()).replace('window.parent.location.replace("', '').replace('");', '')
-	print(link)
-	chance_html = requests.get(link).text
-	chance_text = BeautifulSoup(chance_html, 'html.parser').find('body').get_text()
-	#print chance_html
-	print(pattern.findall(chance_text))
-	print('')
+	if not link[-4:] == '.pdf':
+		print(link)
+		chance_html = requests.get(link).text
+		chance_text = BeautifulSoup(chance_html, 'html.parser').find('body').get_text()
+		#print chance_html
+		print(pattern.findall(chance_text))
+		print('')
