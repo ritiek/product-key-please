@@ -25,6 +25,8 @@ cd Product-Key-Please
 
 It will keep presenting you with possible product keys for the software and save them to `keys/windows_7.txt`.
 
+- Press `Ctrl+C` to exit anytime.
+
 ## Disclaimer:
 
 In no way I support piracy. This tool is meant for educational purposes only and I will not be held responsible for any misuse.
