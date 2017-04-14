@@ -1,13 +1,17 @@
-#!/bin/python
+#!/usr/bin/env python
 
 from bs4 import BeautifulSoup
 import requests
 import re
 import sys
+import os, os.path
 
 if len(sys.argv) <= 2:
 	print("Example: sudo python find_key.py 'windows 7' '?????-?????-?????-?????-?????'")
 	exit()
+
+if not os.path.exists('keys'):
+	os.makedirs('keys')
 
 def reCompiler(template):
 	regex_add = ''
@@ -43,3 +47,7 @@ for x in links:
 		#print chance_html
 		print(pattern.findall(chance_text))
 		print('')
+		file = query.replace(' ', '_') + '.txt'
+		with open(('keys/' + file), 'a') as key_file:
+			for y in pattern.findall(chance_text):
+				key_file.write(y + '\n')
