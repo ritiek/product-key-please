@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from bs4 import BeautifulSoup
+from random import choice
 import requests
 import re
 import sys
@@ -12,6 +13,18 @@ if len(sys.argv) <= 2:
 
 if not os.path.exists('keys'):
 	os.makedirs('keys')
+
+headers = (
+	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0',
+	'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100 101 Firefox/22.0',
+	'Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0',
+	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.5 (KHTML, like Gecko)',
+	'Chrome/19.0.1084.46 Safari/536.5',
+	'Mozilla/5.0 (Windows; Windows NT 6.1) AppleWebKit/536.5 (KHTML, like Gecko)',
+	'Chrome/19.0.1084.46',
+	'Safari/536.5',
+	'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.13) Gecko/20101206 Ubuntu/10.10 (maverick) Firefox/3.6.13',
+	)
 
 def reCompiler(template):
 	regex_add = ''
@@ -34,7 +47,9 @@ pattern = re.compile(regex_compile)
 number = 0      # 0 = page 1. 10 = page 2. ...
 
 while True:
-	page = requests.get('https://www.google.com/search?q=' + query.replace(' ', '+') + '+product+key&start=' + str(number)).text
+	header = {'User-agent': choice(headers)}
+	url = 'https://www.google.com/search?q=' + query.replace(' ', '+') + '+product+key&start=' + str(number)
+	page = requests.get(url, headers=header).text
 	soup = BeautifulSoup(page, 'html.parser')
 	#print soup
 	#print 'searching'
@@ -48,7 +63,7 @@ while True:
 				link = raw_link[7:end]
 				if not link[-4:] == '.pdf':
 					print(link)
-					chance_html = requests.get(link).text
+					chance_html = requests.get(link, headers=header).text
 					chance_text = BeautifulSoup(chance_html, 'html.parser').find('body').get_text()
 					#print chance_html
 					print(pattern.findall(chance_text))
