@@ -1,4 +1,4 @@
-# Product-Key-Grabber
+# Product-Key-Please
 
 - This handy python script finds product keys for commercial softwares by looking for them on the Internet.
 
