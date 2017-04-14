@@ -25,10 +25,6 @@ cd Product-Key-Please
 
 It will keep presenting you with possible product keys for the software and save them to `keys/windows_7.txt`.
 
-## To Do:
-
-- Make the script for more than one page (duckduckgo restricts more than one page).
-
 ## Disclaimer:
 
 In no way I support piracy. This tool is meant for educational purposes only and I will not be held responsible for any misuse.
