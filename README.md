@@ -7,8 +7,8 @@
 ## Installation & Usage:
 
 ```
-git clone https://github.com/Ritiek/Product-Key-Please
-cd Product-Key-Please
+git clone https://github.com/ritiek/product-key-please
+cd product-key-please
 ```
 
 - We need Requests and BeautifulSoup:
